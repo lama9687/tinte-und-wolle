@@ -1,0 +1,145 @@
+/* ============================================
+   Tinte & Wolle – Farben und Gestaltung
+   Farben änderst du hier oben an einer Stelle.
+   ============================================ */
+:root {
+  --hintergrund: #FBF6E6;
+  --text: #33422F;
+  --gruen-dunkel: #2F4F36;
+  --akzent: #3F6B45;
+  --himmel: #D9EEF3;
+  --wiese: #DDEBC8;
+  --rosa: #F9DDD6;
+  --sonne: #FBEFC9;
+  --weiss: #FFFFFF;
+  --schrift-titel: "Fraunces", Georgia, "Times New Roman", serif;
+  --schrift-text: "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --schrift-hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--hintergrund);
+  color: var(--text);
+  font-family: var(--schrift-text);
+  font-size: 17px;
+  line-height: 1.65;
+}
+img { max-width: 100%; }
+a { color: var(--akzent); }
+a:hover { color: var(--gruen-dunkel); }
+h1, h2, h3 { font-family: var(--schrift-titel); color: var(--gruen-dunkel); font-weight: 600; }
+
+.breite { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+.hand { font-family: var(--schrift-hand); font-size: 28px; color: var(--akzent); margin: 0 0 4px; }
+.hand.klein { font-size: 22px; margin-bottom: 14px; }
+
+/* ---------- Einstieg mit Himmel und Hügeln ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#BFE1EE, #E8F3EC 70%, var(--hintergrund));
+}
+.wolken { position: absolute; top: 0; left: 0; width: 100%; height: 300px; }
+.huegel { position: absolute; left: 0; bottom: 0; width: 100%; height: 170px; }
+
+.kopf {
+  position: relative;
+  display: flex; flex-wrap: wrap; gap: 16px;
+  align-items: center; justify-content: space-between;
+  max-width: 1120px; margin: 0 auto; padding: 24px 32px;
+}
+.marke { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.marke span { font-family: var(--schrift-titel); font-size: 28px; font-weight: 600; color: var(--gruen-dunkel); }
+.kopf nav { display: flex; flex-wrap: wrap; gap: 24px; font-weight: 600; }
+.kopf nav a { text-decoration: none; color: var(--text); }
+
+.hero-inhalt { position: relative; max-width: 1120px; margin: 0 auto; padding: 48px 32px 200px; }
+.hero-logo { position: absolute; right: 48px; top: 32px; width: 270px; height: 270px; }
+.hero h1 { margin: 0; max-width: 780px; font-size: clamp(38px, 6vw, 68px); line-height: 1.12; }
+.intro { margin: 24px 0 0; max-width: 620px; font-size: 20px; }
+
+.knoepfe { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+.knopf {
+  display: inline-block; padding: 14px 30px;
+  background: var(--akzent); color: var(--weiss);
+  text-decoration: none; border-radius: 999px; font-weight: 700;
+  box-shadow: 0 4px 0 #2A4A30;
+}
+.knopf:hover { color: var(--weiss); }
+.knopf.hell { background: #FFFDF4; color: var(--akzent); border: 2px solid var(--akzent); box-shadow: none; padding: 12px 28px; }
+
+/* ---------- Rubrik-Karten ---------- */
+.rubriken {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;
+  padding-top: 24px; padding-bottom: 72px;
+}
+.karte {
+  display: block; padding: 28px;
+  border: 3px solid var(--weiss); border-radius: 32px;
+  text-decoration: none; color: var(--text);
+}
+.karte h2 { margin: 12px 0 8px; font-size: 28px; color: var(--text); }
+.karte p { margin: 0; }
+.karte.blau { background: var(--himmel); box-shadow: 0 6px 0 #B7D8E1; }
+.karte.gruen { background: var(--wiese); box-shadow: 0 6px 0 #BFD6A2; }
+.karte.rosa { background: var(--rosa); box-shadow: 0 6px 0 #EBBFB4; }
+
+/* ---------- Artikel im Fokus ---------- */
+.fokus {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;
+  align-items: center; padding-bottom: 72px; scroll-margin-top: 24px;
+}
+.fokus h2 { margin: 0 0 16px; font-size: 38px; line-height: 1.2; }
+.fokus-bild {
+  min-height: 340px; background: var(--himmel);
+  border: 6px solid var(--weiss); border-radius: 40px; box-shadow: 0 8px 0 #B7D8E1;
+  display: flex; align-items: center; justify-content: center; color: #3F5560; font-size: 15px;
+  overflow: hidden;
+}
+.fokus-bild img { width: 100%; height: 100%; object-fit: cover; }
+.fokus-bild.rosa-bild { background: var(--rosa); box-shadow: 0 8px 0 #EBBFB4; }
+
+/* ---------- Pflanzen ---------- */
+.pflanzen { background: var(--wiese); padding: 72px 0 96px; border-radius: 48px; margin-bottom: 72px; }
+.pflanzen h2 { margin: 0 0 8px; font-size: 38px; }
+.unterzeile { margin: 0 0 32px; max-width: 600px; }
+.pflanzen-raster { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+
+.pflanze {
+  background: #FFFDF4; border: 5px solid var(--weiss); border-radius: 32px;
+  overflow: hidden; box-shadow: 0 6px 0 #BFD6A2;
+}
+.pflanze img {
+  display: block; width: 100%; height: 240px; object-fit: cover;
+  background: #C3DBA5; border-radius: 0 0 40px 40px;
+}
+.pflanze-text { padding: 20px 22px 24px; }
+.pflanze h3 { margin: 0 0 4px; font-size: 24px; }
+.pflanze ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15px; }
+.pflanze li { padding: 8px 12px; border-radius: 14px; }
+.pflanze li.giessen { background: var(--himmel); }
+.pflanze li.licht { background: var(--sonne); }
+.pflanze li.ort { background: var(--wiese); }
+.pflanze li.tipp { background: var(--rosa); }
+
+/* ---------- Fußzeile ---------- */
+footer { background: #8FBF7A; color: #1F3324; padding: 40px 0 48px; font-size: 15px; }
+footer p { margin: 0 0 8px; }
+footer a { color: #1F3324; }
+
+/* ---------- Unterseiten (Impressum, Datenschutz) ---------- */
+.unterseite { max-width: 760px; margin: 0 auto; padding: 32px; }
+.unterseite .marke { margin-bottom: 32px; }
+
+/* ---------- Handy ---------- */
+@media (max-width: 900px) {
+  .hero-logo { display: none; }
+}
+@media (max-width: 600px) {
+  .breite, .kopf, .hero-inhalt { padding-left: 16px; padding-right: 16px; }
+  .hero-inhalt { padding-bottom: 160px; }
+  .fokus h2, .pflanzen h2 { font-size: 30px; }
+}
